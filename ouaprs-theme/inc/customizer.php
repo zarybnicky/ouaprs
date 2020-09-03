@@ -34,8 +34,8 @@ function themes_starter_customize( $wp_customize ) {
         'sanitize_callback' => 'esc_url_raw',
     ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_logo', array(
-        'label'       => __( 'Upload Header Logo', 'my-theme' ),
-        'description' => __( 'Height: &gt;80px', 'my-theme' ),
+        'label'       => __( 'Upload Header Logo', 'ouaprs-theme' ),
+        'description' => __( 'Height: &gt;80px', 'ouaprs-theme' ),
         'section'     => 'theme_header_section',
         'settings'    => 'header_logo',
         'priority'    => 1,
@@ -48,12 +48,12 @@ function themes_starter_customize( $wp_customize ) {
     ) );
     $wp_customize->add_control( 'navbar_scheme', array(
         'type'     => 'radio',
-        'label'    => __( 'Navbar Scheme', 'my-theme' ),
+        'label'    => __( 'Navbar Scheme', 'ouaprs-theme' ),
         'section'  => 'theme_header_section',
         'choices'  => array(
-                        'navbar-light bg-light'  => __( 'Default', 'my-theme' ),
-                        'navbar-dark bg-dark'    => __( 'Dark', 'my-theme' ),
-                        'navbar-dark bg-primary' => __( 'Primary', 'my-theme' ),
+                        'navbar-light bg-light'  => __( 'Default', 'ouaprs-theme' ),
+                        'navbar-dark bg-dark'    => __( 'Dark', 'ouaprs-theme' ),
+                        'navbar-dark bg-primary' => __( 'Primary', 'ouaprs-theme' ),
                     ),
         'settings' => 'navbar_scheme',
         'priority' => 1,
@@ -66,12 +66,12 @@ function themes_starter_customize( $wp_customize ) {
     ) );
     $wp_customize->add_control( 'navbar_position', array(
         'type'     => 'radio',
-        'label'    => __( 'Navbar', 'my-theme' ),
+        'label'    => __( 'Navbar', 'ouaprs-theme' ),
         'section'  => 'theme_header_section',
         'choices'  => array(
-                        'static'       => __( 'Static', 'my-theme' ),
-                        'fixed_top'    => __( 'Fixed to top', 'my-theme' ),
-                        'fixed_bottom' => __( 'Fixed to bottom', 'my-theme' ),
+                        'static'       => __( 'Static', 'ouaprs-theme' ),
+                        'fixed_top'    => __( 'Fixed to top', 'ouaprs-theme' ),
+                        'fixed_bottom' => __( 'Fixed to bottom', 'ouaprs-theme' ),
                     ),
         'settings' => 'navbar_position',
         'priority' => 2,
@@ -84,7 +84,7 @@ function themes_starter_customize( $wp_customize ) {
     ) );
     $wp_customize->add_control( 'search_enabled', array(
         'type'     => 'checkbox',
-        'label'    => __( 'Show Searchfield?', 'my-theme' ),
+        'label'    => __( 'Show Searchfield?', 'ouaprs-theme' ),
         'section'  => 'theme_header_section',
         'settings' => 'search_enabled',
         'priority' => 3,

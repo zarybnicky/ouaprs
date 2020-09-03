@@ -11,22 +11,22 @@
             while ( have_posts() ) :
             the_post();
     ?>
-        
+
         <?php
             get_template_part( 'content', 'single' );
-            
+
             // If comments are open or we have at least one comment, load up the comment template
             if ( comments_open() || get_comments_number() ) :
                 comments_template();
             endif;
         ?>
-        
+
     <?php
             endwhile;
         endif;
         wp_reset_postdata(); // end of the loop.
     ?>
-    
+
     <?php
         $count_posts = wp_count_posts();
 
@@ -41,7 +41,7 @@
                     $prev_title = get_the_title( $prev_post->ID );
             ?>
                 <div class="pr-3">
-                    <a class="previous-post btn btn-lg btn-outline-secondary" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" title="<?php echo esc_attr( $prev_title ); ?>">
+                    <a class="previous-post btn btn-lg btn-outline-secondary" href="<?= esc_url( get_permalink( $prev_post->ID ) ); ?>" title="<?= esc_attr( $prev_title ); ?>">
                         <span class="arrow">&larr;</span>
                         <span class="title"><?php echo wp_kses_post( $prev_title ); ?></span>
                     </a>
@@ -52,8 +52,8 @@
                     $next_title = get_the_title( $next_post->ID );
             ?>
                 <div class="pl-3">
-                    <a class="next-post btn btn-lg btn-outline-secondary" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo esc_attr( $next_title ); ?>">
-                        <span class="title"><?php echo wp_kses_post( $next_title ); ?></span>
+                    <a class="next-post btn btn-lg btn-outline-secondary" href="<?= esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo esc_attr( $next_title ); ?>">
+                        <span class="title"><?= wp_kses_post( $next_title ); ?></span>
                         <span class="arrow">&rarr;</span>
                     </a>
                 </div>

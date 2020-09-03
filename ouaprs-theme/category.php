@@ -7,9 +7,8 @@
 ?>
 
     <?php if ( have_posts() ) : ?>
-        
         <header class="page-header">
-            <h1 class="page-title"><?php printf( __( 'Category Archives: %s', 'my-theme' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></h1>
+            <h1 class="page-title">Kategorie <span><?= single_cat_title( '', false ) ?></span></h1>
             <?php
                 $category_description = category_description();
                 if ( ! empty( $category_description ) ) :
@@ -18,17 +17,9 @@
             ?>
         </header>
 
-        <?php
-            get_template_part( 'archive', 'loop' );
-        ?>
-
+        <?php get_template_part( 'archive', 'loop' ) ?>
     <?php else : ?>
-
-        <?php
-            // 404
-            get_template_part( 'content', 'none' );
-        ?>
-
+        <?php get_template_part( 'content', 'none' ) ?>
     <?php
         endif;
         wp_reset_postdata(); // end of the loop.

@@ -9,7 +9,7 @@
     <?php if ( have_posts() ) : ?>
 
         <header class="page-header">
-            <h1 class="page-title"><?php printf( __( 'Tag: %s', 'my-theme' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
+            <h1 class="page-title">Štítek: <span><?= single_tag_title( '', false ) ?></span></h1>
             <?php
                 $tag_description = tag_description();
                 if ( ! empty( $tag_description ) ) :

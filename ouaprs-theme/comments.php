@@ -8,15 +8,15 @@
     * the visitor has not yet entered the password we will
     * return early without loading the comments.
     */
-    if ( post_password_required() ) {
+    // if ( post_password_required() ) {
         return;
-    }
+    // }
 ?>
 <div id="comments">
     <?php if ( comments_open() && ! have_comments() ) : ?>
         <h2 id="comments-title">
             <?php
-                _e( 'No Comments yet!', 'my-theme' );
+                _e( 'No Comments yet!', 'ouaprs-theme' );
             ?>
         </h2>
     <?php endif; ?>
@@ -27,7 +27,7 @@
                 $comments_number = get_comments_number();
                 if ( '1' === $comments_number ) {
                     /* translators: %s: post title */
-                    printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'my-theme' ), get_the_title() );
+                    printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'ouaprs-theme' ), get_the_title() );
                 } else {
                     printf(
                         /* translators: 1: number of comments, 2: post title */
@@ -36,7 +36,7 @@
                             '%1$s Replies to &ldquo;%2$s&rdquo;',
                             $comments_number,
                             'comments title',
-                            'my-theme'
+                            'ouaprs-theme'
                         ),
                         number_format_i18n( $comments_number ),
                         get_the_title()
@@ -47,9 +47,9 @@
         
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
         <nav id="comment-nav-above">
-            <h1 class="assistive-text"><?php _e( 'Comment navigation', 'my-theme' ); ?></h1>
-            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'my-theme' ) ); ?></div>
-            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'my-theme' ) ); ?></div>
+            <h1 class="assistive-text"><?php _e( 'Comment navigation', 'ouaprs-theme' ); ?></h1>
+            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'ouaprs-theme' ) ); ?></div>
+            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'ouaprs-theme' ) ); ?></div>
         </nav>
         <?php endif; // check for comment navigation ?>
         
@@ -59,7 +59,7 @@
                  * to use theme_comment() to format the comments.
                  * If you want to overload this in a child theme then you can
                  * define theme_comment() and that will be used instead.
-                 * See theme_comment() in my-theme/functions.php for more.
+                 * See theme_comment() in ouaprs-theme/functions.php for more.
                  */
                 wp_list_comments( array( 'callback' => 'themes_starter_comment' ) );
             ?>
@@ -67,9 +67,9 @@
         
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
         <nav id="comment-nav-below">
-            <h1 class="assistive-text"><?php _e( 'Comment navigation', 'my-theme' ); ?></h1>
-            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'my-theme' ) ); ?></div>
-            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'my-theme' ) ); ?></div>
+            <h1 class="assistive-text"><?php _e( 'Comment navigation', 'ouaprs-theme' ); ?></h1>
+            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'ouaprs-theme' ) ); ?></div>
+            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'ouaprs-theme' ) ); ?></div>
         </nav>
         <?php endif; // check for comment navigation ?>
 
@@ -79,7 +79,7 @@
          */
         elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
     ?>
-        <h2 id="comments-title" class="nocomments"><?php _e( 'Comments are closed.', 'my-theme' ); ?></h2>
+        <h2 id="comments-title" class="nocomments"><?php _e( 'Comments are closed.', 'ouaprs-theme' ); ?></h2>
         
     <?php
         endif;

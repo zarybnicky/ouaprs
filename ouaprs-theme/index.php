@@ -15,14 +15,12 @@
             <?php
                 echo apply_filters( 'the_content', get_post_field( 'post_content', $page_id ) );
 
-                edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>', $page_id );
+                edit_post_link('Upravit', '<span class="edit-link">', '</span>', $page_id );
             ?>
         </div><!-- /.col -->
 
         <div class="col-md-12">
-            <?php
-                get_template_part( 'archive', 'loop' );
-            ?>
+            <?php get_template_part( 'archive', 'loop' ) ?>
         </div><!-- /.col -->
     </div><!-- /.row -->
 

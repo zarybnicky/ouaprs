@@ -27,26 +27,26 @@
 
             the_content();
 
-            wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'my-theme' ) . '</span>', 'after' => '</div>' ) );
+            wp_link_pages( array( 'before' => '<div class="page-link"><span>Stránky:</span>', 'after' => '</div>' ) );
         ?>
     </div><!-- /.entry-content -->
     
-    <?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_post_link('Upravit', '<span class="edit-link">', '</span>' ); ?>
 
     <footer class="entry-meta">
         <hr>
         <?php
             /* translators: used between list items, there is a space after the comma */
-            $category_list = get_the_category_list( __( ', ', 'my-theme' ) );
+            $category_list = get_the_category_list(', ');
             
             /* translators: used between list items, there is a space after the comma */
-            $tag_list = get_the_tag_list( '', __( ', ', 'my-theme' ) );
+            $tag_list = get_the_tag_list('', ', ');
             if ( '' !== $tag_list ) :
-                $utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'my-theme' );
+                $utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'ouaprs-theme' );
             elseif ( '' !== $category_list ) :
-                $utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'my-theme' );
+                $utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'ouaprs-theme' );
             else :
-                $utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'my-theme' );
+                $utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'ouaprs-theme' );
             endif;
             
             printf(
