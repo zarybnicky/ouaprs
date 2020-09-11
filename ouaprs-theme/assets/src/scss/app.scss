@@ -1,5 +1,34 @@
 /* stylelint-disable selector-list-comma-newline-after */
+
+$enable-gradients: true;
+$theme-colors: (
+  "primary": #d2713d,
+  "blue": #6aa7eb,
+  "dark-blue": #1f3161
+);
+
 @import "~bootstrap/scss/bootstrap";
+
+.navbar-brand {
+    img {
+        height: 58px;
+        @include media-breakpoint-up(sm) {
+            height: 76px;
+        }
+    }
+    h1 > span {
+        line-height: 1;
+        &:nth-child(1) { font-size: 1.25rem; font-weight: bold; }
+        &:nth-child(3) { font-size: 1.25rem; font-weight: bold; }
+        &:nth-child(5) { font-size: 1rem; font-weight: normal; }
+        @include media-breakpoint-up(sm) {
+            line-height: 1.2;
+            &:nth-child(1) { font-size: 1.5rem; }
+            &:nth-child(3) { font-size: 1.5rem; }
+            &:nth-child(5) { font-size: 1.25rem; }
+        }
+    }
+}
 
 .blog-header {
   line-height: 1;
@@ -15,8 +44,8 @@
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: bold;
 }
 
 .display-4 {

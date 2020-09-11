@@ -12,11 +12,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bootstrap": "^4.1.0",
+    "bootstrap": "^4.4.1",
     "browser-sync": "^2.23.7",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "jquery": "^3.5.0",
+    "jquery": "^3.5.1",
     "laravel-mix": "^2.1.11",
     "popover.js": "^0.2.34"
+  },
+  "dependencies": {
+    "popper.js": "^1.16.1"
   }
 }

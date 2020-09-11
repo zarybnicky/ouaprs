@@ -1,0 +1,25 @@
+{% macro menuitem(item) %}
+  {% import _self as self %}
+  {% if item.current %}
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ item.title }}
+    </li>
+  {% endif %}
+  {% if item.current_item_ancestor %}
+    <li class="breadcrumb-item">
+      <a href="{{ item.link }}">{{ item.title }}</a>
+    </li>
+    {% for child in item.children %}
+      {{ self.menuitem(child) }}
+    {% endfor %}
+  {% endif %}
+{% endmacro %}
+
+{% import _self as self %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    {% for item in menu.items %}
+      {{ self.menuitem(item) }}
+    {% endfor %}
+  </ol>
+</nav>

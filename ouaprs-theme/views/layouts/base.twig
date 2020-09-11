@@ -12,22 +12,17 @@
     <link href="{{ site.theme.link }}/assets/dist/app.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="container">
-    {% include 'partials/header.twig' %}
-    {% include 'partials/nav.twig' %}
-</div>
-<main role="main" class="container">
+  {% include 'partials/header.twig' %}
+  <main role="main" class="container">
     {% block content %}
     {% endblock %}
-</main>
-<footer class="blog-footer">
-    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.
-    </p>
+  </main>
+  <footer class="blog-footer">
     <p>
-        <a href="#">Back to top</a>
+      <a href="#">Back to top</a>
     </p>
-</footer>
-{{ wp_footer }}
-<script src="{{ site.theme.link }}/assets/dist/app.js"></script>
+  </footer>
+  {{ wp_footer }}
+  <script src="{{ site.theme.link }}/assets/dist/app.js"></script>
 </body>
 </html>
