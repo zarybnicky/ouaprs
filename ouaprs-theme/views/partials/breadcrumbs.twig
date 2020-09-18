@@ -6,9 +6,11 @@
     </li>
   {% endif %}
   {% if item.current_item_ancestor %}
-    <li class="breadcrumb-item">
-      <a href="{{ item.link }}">{{ item.title }}</a>
-    </li>
+    {% if item.link == '#' %}
+      <li class="breadcrumb-item active">{{ item.title }}</a>
+    {% else %}
+      <li class="breadcrumb-item"><a href="{{ item.link }}">{{ item.title }}</a></li>
+    {% endif %}
     {% for child in item.children %}
       {{ self.menuitem(child) }}
     {% endfor %}
@@ -16,10 +18,13 @@
 {% endmacro %}
 
 {% import _self as self %}
-<nav aria-label="breadcrumb">
+<nav class="bg-white pt-2" aria-label="breadcrumb">
   <ol class="breadcrumb">
-    {% for item in menu.items %}
-      {{ self.menuitem(item) }}
-    {% endfor %}
+    <li class="breadcrumb-item">
+      <a href="/">
+
+      </a>
+    </li>
+    {% for item in menu.items %} {{ self.menuitem(item) }} {% endfor %}
   </ol>
 </nav>

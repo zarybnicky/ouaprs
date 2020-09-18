@@ -1,8 +1,12 @@
 {% extends 'layouts/base.twig' %}
+{% block breadcrumbs %}
+  {% include 'partials/breadcrumbs.twig' %}
+{% endblock %}
 {% block content %}
   <div class="blog-post">
-    {% include 'partials/breadcrumbs.twig' %}
-    <h2 class="blog-post-title mb-3">{{ post.title }}</h2>
+    {% if post.title %}
+      <h2 class="blog-post-title mb-3">{{ post.title }}</h2>
+    {% endif %}
     {{ post.content | shortcodes }}
   </div>
 {% endblock %}

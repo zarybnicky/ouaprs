@@ -2,30 +2,35 @@
 
 $enable-gradients: true;
 $theme-colors: (
-  "primary": #d2713d,
-  "blue": #6aa7eb,
-  "dark-blue": #1f3161
+    "primary": #da753e, // #d2713d,
+    "blue": #6aa7eb,
+    "dark-blue": #23376e
 );
 
 @import "~bootstrap/scss/bootstrap";
 
-.navbar-brand {
-    img {
-        height: 58px;
-        @include media-breakpoint-up(sm) {
-            height: 76px;
-        }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #23376e;
+}
+
+.navbar-brand img {
+    height: 58px;
+    @include media-breakpoint-up(sm) {
+        height: 96px;
     }
-    h1 > span {
+}
+.main-title {
+    font-size: 1rem;
+    div {
         line-height: 1;
         &:nth-child(1) { font-size: 1.25rem; font-weight: bold; }
-        &:nth-child(3) { font-size: 1.25rem; font-weight: bold; }
-        &:nth-child(5) { font-size: 1rem; font-weight: normal; }
+        &:nth-child(2) { font-size: 1.25rem; font-weight: bold; }
+        &:nth-child(3) { font-size: 1rem; font-weight: normal; }
         @include media-breakpoint-up(sm) {
             line-height: 1.2;
             &:nth-child(1) { font-size: 1.5rem; }
-            &:nth-child(3) { font-size: 1.5rem; }
-            &:nth-child(5) { font-size: 1.25rem; }
+            &:nth-child(2) { font-size: 1.5rem; }
+            &:nth-child(3) { font-size: 1.25rem; }
         }
     }
 }
@@ -151,10 +156,6 @@ $theme-colors: (
 .blog-footer {
   padding: 2.5rem 0;
   color: #999;
-  text-align: center;
   background-color: #f9f9f9;
   border-top: .05rem solid #e5e5e5;
-}
-.blog-footer p:last-child {
-  margin-bottom: 0;
 }

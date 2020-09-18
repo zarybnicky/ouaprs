@@ -7,7 +7,10 @@ class mySite extends Timber\Site
     public function __construct()
     {
         add_theme_support('post-thumbnails');
-        add_theme_support('menus');
+        register_nav_menus([
+            'main-menu' => 'Navigace',
+            'footer-menu' => 'Patička'
+        ]);
         add_filter('timber_context', [$this, 'add_to_context']);
         parent::__construct();
     }
@@ -15,6 +18,7 @@ class mySite extends Timber\Site
     public function add_to_context($context)
     {
         $context['menu'] = new Timber\Menu('main-menu');
+        $context['footer'] = new Timber\Menu('footer-menu');
         $context['site'] = $this;
         return $context;
     }

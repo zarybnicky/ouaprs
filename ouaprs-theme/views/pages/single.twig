@@ -1,4 +1,7 @@
 {% extends 'layouts/base.twig' %}
+{% block breadcrumbs %}
+  {% include 'partials/breadcrumbs.twig' %}
+{% endblock %}
 {% block content %}
   <div class="blog-post">
     {% if post.thumbnail.src %}
@@ -7,7 +10,6 @@
              alt="{{ post.title }}"/>
       </div>
     {% endif %}
-    {% include 'partials/breadcrumbs.twig' %}
     <h2 class="blog-post-title">{{ post.title }}</h2>
     <p class="blog-post-meta">January 1, 2014 by <a href="{{post.author.link}}">{{post.author.name}}</a></p>
     {{ post.content | shortcodes }}

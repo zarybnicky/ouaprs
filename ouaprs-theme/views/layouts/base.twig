@@ -17,12 +17,7 @@
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="blog-footer">
-    <p>
-      <a href="#">Back to top</a>
-    </p>
-  </footer>
-  {{ wp_footer }}
+  {% include 'partials/footer.twig' %}
   <script src="{{ site.theme.link }}/assets/dist/app.js"></script>
 </body>
 </html>
